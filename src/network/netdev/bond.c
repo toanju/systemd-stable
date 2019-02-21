@@ -502,7 +502,7 @@ int config_parse_ad_actor_system(const char *unit,
         if (!n)
                 return log_oom();
 
-        r = ether_addr_from_string(rvalue, n);
+        r = ether_addr_from_string(rvalue, n, NULL);
         if (r < 0) {
                 log_syntax(unit, LOG_ERR, filename, line, r, "Not a valid MAC address %s. Ignoring assignment: %m", rvalue);
                 return 0;
